@@ -3,7 +3,7 @@ pipeline {
     
     environment {
     DOCKERHUB_CREDENTIALS = credentials('docker-creds')
-    DOCKER_ACCOUNT = 'chaitu685'
+    DOCKER_ACCOUNT = 'your-docker-username'
     }
     
     stages {

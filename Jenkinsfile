@@ -4,8 +4,8 @@ pipeline {
     environment {
             
         DOCKERHUB_CREDENTIALS = credentials('docker-creds') // "docker-creds" is the ID of the Jenkins Credential holding your Docker Credentials
-        DOCKER_ACCOUNT = '$DOCKERHUB_CREDENTIALS_USR'
-        DOCKER_REPOSITORY = 'test-repo1'
+        #DOCKER_ACCOUNT = '$DOCKERHUB_CREDENTIALS_USR'
+        DOCKER_REPOSITORY = 'techit'
         TEMPLATE_PATH = sh(script: 'locate html.tpl', returnStdout: true).trim()
         SCANNER_HOME = tool 'sonar-scanner'
         SONAR_ORGANIZATION = 'techitfactoryb01'
@@ -15,7 +15,7 @@ pipeline {
         
         stage('Git Checkout') {
             steps {
-                git branch: 'feature', credentialsId: 'git-creds', url: 'https://github.com/TechITFactoryb01/online-boutique-microservices-code.git'
+                git branch: 'feature', credentialsId: 'git-creds', url: 'https://github.com/RSRevanth/online-boutique-microservices-code.git'
             }
         }
         
